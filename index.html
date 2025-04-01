@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
 	
-	/* Heart Confetti Styles */
 .heart-confetti {
     position: fixed;
     top: -50px;
@@ -160,7 +159,6 @@
             --transition: all 0.3s ease;
         }
 
-        /* Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -177,7 +175,6 @@
             min-height: 100vh;
         }
 
-        /* Gorgeous Background Elements */
         .bg-container {
             position: fixed;
             top: 0;
@@ -242,7 +239,6 @@
             100% { transform: scale(1.5); opacity: 0; }
         }
 
-        /* Typography */
         h1, h2, h3 {
             font-weight: 600;
             color: var(--primary-dark);
@@ -265,7 +261,6 @@
             font-size: 1rem;
         }
 
-        /* Layout */
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -285,7 +280,6 @@
             margin: 0 auto;
         }
 
-        /* Song Cards with Wider Thumbnails */
         .song-card {
             background: rgba(255, 255, 255, 0.85);
             border-radius: 12px;
@@ -310,9 +304,9 @@
         }
 
         .song-thumbnail-container {
-            width: 100%; /* Full width on mobile */
+            width: 100%;
             height: 0;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
             position: relative;
             border-radius: 8px;
             overflow: hidden;
@@ -364,7 +358,6 @@
             font-size: 0.95rem;
         }
 
-        /* Custom Audio Player */
         .audio-container {
             width: 100%;
             margin: 1rem 0;
@@ -427,7 +420,6 @@
             gap: 0.5rem;
         }
 
-        /* Buttons */
         .btn-group {
             display: flex;
             gap: 0.75rem;
@@ -471,7 +463,6 @@
             border-color: var(--primary-light);
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 2rem 0;
@@ -480,7 +471,6 @@
             font-size: 0.9rem;
         }
 
-        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -501,7 +491,6 @@
         .delay-9 { animation-delay: 1.8s; }
         .delay-10 { animation-delay: 2.0s; }
 
-        /* Responsive Design - Optimized for Android */
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -518,7 +507,7 @@
             
             .song-thumbnail-container {
                 width: 100%;
-                padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio */
+                padding-bottom: 56.25%;
                 border-radius: 6px;
             }
             
@@ -555,7 +544,7 @@
 <body>
 
 <div class="love-meter-mini">
-    <button class="mini-love-btn" id="miniMeasureLove">Measure my love ❤️</button>
+    <button class="mini-love-btn" id="miniMeasureLove">My love for you? ❤️</button>
     <div class="mini-scanner"></div>
     <div class="mini-result" id="miniResult"><h6>13% or 15% ?</h6></div>
     <div class="mini-hearts" id="miniHearts"></div>
@@ -566,7 +555,7 @@
     <div class="container">
         <header class="fade-in">
             <h1><b>My heart in a<br>PLAYLIST</b></h1>
-            <p class="subtitle"><h2>33 songs</h2><h4>that reminds me of you...</h4></p>
+            <p class="subtitle"><h2>33 songs</h2><h4>that remind me of you...</h4></p>
         </header>
 
         <main>
@@ -574,7 +563,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Amar Shotto<h6><i>(You are my truth...)</i></h6></h2>
+            <h2>1. Amar Shotto<h6><i>(You are my truth...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio1">
@@ -607,7 +596,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>I Wanna Be Yours<h6><i>(That's why I want to be with you...)</i></h6></h2>
+            <h2>2. I Wanna Be Yours<h6><i>(That's why I want to be with you...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio2">
@@ -640,7 +629,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Jodi Abar<h6><i>(If only we could be together...)</i></h6></h2>
+            <h2>3. Jodi Abar<h6><i>(If only we could be together...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio3">
@@ -673,7 +662,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Jodi Konodin<h6><i>(If someday...)</i></h6></h2>
+            <h2>4. Jodi Konodin<h6><i>(If someday...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio4">
@@ -706,7 +695,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Tumi Amar Onek Shokher<h6><i>(You are my most beloved dream...)</i></h6></h2>
+            <h2>5. Tumi Amar Onek Shokher<h6><i>(You are my most beloved dream...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio5">
@@ -739,7 +728,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Jo Tum Mere Ho<h6><i>(Only if you were mine...)</i></h6></h2>
+            <h2>6. Jo Tum Mere Ho<h6><i>(Only if you were mine...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio6">
@@ -772,7 +761,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Tera Ban Jaunga<h6><i>(Or maybe if I would become yours...)</i></h6></h2>
+            <h2>7. Tera Ban Jaunga<h6><i>(Or maybe if I would become yours...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio7">
@@ -805,7 +794,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Tum Se Hi<h6><i>(Because with you, everything feels right...)</i></h6></h2>
+            <h2>8. Tum Se Hi<h6><i>(Because with you, everything feels right...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio8">
@@ -838,7 +827,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Meherbaan<h6><i>(You are so kind and loving...)</i></h6></h2>
+            <h2>9. Meherbaan<h6><i>(You are so kind and loving...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio9">
@@ -871,7 +860,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Ishq Hai<h6><i>(Ishq? Onneekkkk, onek beshi...)</i></h6></h2>
+            <h2>10. Ishq Hai<h6><i>(Ishq? Onneekkkk, onek beshi...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio10">
@@ -904,7 +893,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Raanjhan<h6><i>(You are my beloved...)</i></h6></h2>
+            <h2>11. Raanjhan<h6><i>(You are my beloved...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio11">
@@ -937,7 +926,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Mehrama<h6><i>(But this love also brings pain...)</i></h6></h2>
+            <h2>12. Mehrama<h6><i>(But this love also brings pain...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio12">
@@ -970,7 +959,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Sudhu Tomake<h6><i>(Still I only want you...)</i></h6></h2>
+            <h2>13. Sudhu Tomake<h6><i>(Still I only want you...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio13">
@@ -1003,7 +992,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Proticchobi<h6><i>(But now, all I have is your reflection...)</i></h6></h2>
+            <h2>15. Proticchobi<h6><i>(But now, all I have is your reflection...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio14">
@@ -1036,7 +1025,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Porinita<h6><i>(Ogo porinitar pane mon chutiya chole... 🙂)</i></h6></h2>
+            <h2>16. Porinita<h6><i>(Ogo porinitar pane mon chutiya chole... 🙂)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio15">
@@ -1069,7 +1058,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Lambiyaan Judaiyaan<h6><i>(1.5 years? Feels so long...)</i></h6></h2>
+            <h2>17. Lambiyaan Judaiyaan<h6><i>(1.5 years? Feels so long...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio16">
@@ -1102,7 +1091,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Dancing With Your Ghost<h6><i>(If you leave, I will be left only with your memories...)</i></h6></h2>
+            <h2>18. Dancing With Your Ghost<h6><i>(If you leave, I will be left only with your memories...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio17">
@@ -1135,7 +1124,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Mombati<h6><i>(Still, like a candle, love will burn quietly...)</i></h6></h2>
+            <h2>19. Mombati<h6><i>(Still, like a candle, love will burn quietly...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio18">
@@ -1168,7 +1157,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Purnata<h6><i>(You complete me, you always do...)</i></h6></h2>
+            <h2>20. Purnata<h6><i>(You complete me, you always do...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio19">
@@ -1201,7 +1190,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>CO2<h6><i>(Just remove the C and I can't live a second without you...)</i></h6></h2>
+            <h2>21. CO2<h6><i>(Just remove the C and I can't live a second without you...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio20">
@@ -1234,7 +1223,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Maand<h6><i>(I can't imagine you fading away...)</i></h6></h2>
+            <h2>22. Maand<h6><i>(I can't imagine you fading away...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio21">
@@ -1267,7 +1256,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Avash<h6><i>(I wanna stay with you at least like a faint of shadow...)</i></h6></h2>
+            <h2>23. Avash<h6><i>(I wanna stay with you at least like a faint of shadow...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio22">
@@ -1300,7 +1289,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Kodom<h6><i>(So that love always finds a way to bloom again...)</i></h6></h2>
+            <h2>24. Kodom<h6><i>(So that love always finds a way to bloom again...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio23">
@@ -1333,7 +1322,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Janib<h6><i>(ooooooooo Roshni pakhi...)</i></h6></h2>
+            <h2>25. Janib<h6><i>(ooooooooo Roshni pakhi...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio24">
@@ -1366,7 +1355,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Dur Shopno<h6><i>(Even if you are a distant dream...)</i></h6></h2>
+            <h2>26. Dur Shopno<h6><i>(Even if you are a distant dream...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio25">
@@ -1399,7 +1388,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Ichchey Manush<h6><i>(Deep inside, I still wish for you...)</i></h6></h2>
+            <h2>27. Ichchey Manush<h6><i>(Deep inside, I still wish for you...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio26">
@@ -1432,7 +1421,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Heat Waves<h6><i>(Memories of you hit me like a heat wave...)</i></h6></h2>
+            <h2>28. Heat Waves<h6><i>(Memories of you hit me like a heat wave...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio27">
@@ -1465,7 +1454,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Suhashini<h6><i>(Your smile is enough to make my day...)</i></h6></h2>
+            <h2>29. Suhashini<h6><i>(Your smile is enough to make my day...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio28">
@@ -1498,7 +1487,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Gazab Ka Hai Din<h6><i>(My day turns out to be best when you stay by my side...)</i></h6></h2>
+            <h2>30. Gazab Ka Hai Din<h6><i>(My day turns out to be best when you stay by my side...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio29">
@@ -1531,7 +1520,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Treat You Better<h6><i>(What if I can love you better than anyone ever will...)</i></h6></h2>
+            <h2>31. Treat You Better<h6><i>(What if I can love you better than anyone ever will...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio30">
@@ -1564,7 +1553,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Tum Hi Ho<h6><i>(Because in the end, it was always you...)</i></h6></h2>
+            <h2>32. Tum Hi Ho<h6><i>(Because in the end, it was always you...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio31">
@@ -1597,7 +1586,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Tumse Mohabbat Hai<h6><i>(And my love for you remains...)</i></h6></h2>
+            <h2>33. Tumse Mohabbat Hai<h6><i>(And my love for you remains...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio32">
@@ -1630,7 +1619,7 @@
 <div class="song-card fade-in delay-1">
     <div class="song-header">
         <div class="song-title-wrapper">
-            <h2>Until I Found You<h6><i>(I will keep searching.. until I find you again...)</i></h6></h2>
+            <h2>34. Until I Found You<h6><i>(I will keep searching.. until I find you again...)</i></h6></h2>
         </div>                                 
         <div class="audio-container">
             <div class="custom-audio" id="customAudio33">
@@ -1660,6 +1649,12 @@
 </div>	
 		
         </main>
+		
+				        <footer class="fade-in">
+            <b><p>For someone I will always adore,<br>For someone who has the prettiest eyes,<br>For someone who brightens my days,<h3>For the most beautiful soul I know... ❤</h3></b><br><br>Looking for anything else?<br><a href="https://fardinnuman.github.io/forroshni/"><b>Click me</b></a><br>☝>.<☝</p>
+        </footer>
+		
+    </div>
 
     <script>
         function initAudio(id) {
@@ -1894,7 +1889,7 @@
         setTimeout(() => heart.remove(), 1800);
     }
   function showInfinity() {
-    miniResult.innerHTML = '<div class="infinity-display"><h3><b>∞</b></h3></div>';
+    miniResult.innerHTML = '<div class="infinity-display"><b>∞</b></div>';
     
     for (let i = 0; i < 12; i++) {
         setTimeout(() => {
