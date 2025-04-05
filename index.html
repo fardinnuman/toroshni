@@ -535,7 +535,7 @@
             }
             
             .song-thumbnail-container {
-                padding-bottom: 75%; /* Slightly taller for mobile */
+                padding-bottom: 75%;
             }
         }
     </style>
@@ -544,7 +544,7 @@
 <body>
 
 <div class="love-meter-mini">
-    <button class="mini-love-btn" id="miniMeasureLove">My hate for you? ❤️</button>
+    <button class="mini-love-btn" id="miniMeasureLove">My ❤️ for you?</button>
     <div class="mini-scanner"></div>
     <div class="mini-result" id="miniResult"><h6>13% or 15% ?</h6></div>
     <div class="mini-hearts" id="miniHearts"></div>
@@ -1889,7 +1889,7 @@
         setTimeout(() => heart.remove(), 1800);
     }
   function showInfinity() {
-    miniResult.innerHTML = '<div class="infinity-display"><b>000</b></div>';
+    miniResult.innerHTML = '<div class="infinity-display"><b>∞</b></div>';
     
     for (let i = 0; i < 12; i++) {
         setTimeout(() => {
