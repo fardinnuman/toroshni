@@ -1,146 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TO : ROSHNI</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-	
-.heart-confetti {
-    position: fixed;
-    top: -50px;
-    font-size: 20px;
-    animation: fall linear infinite;
-    z-index: 1;
-    pointer-events: none;
-    user-select: none;
-}
+        .heart-confetti {
+            position: fixed;
+            top: -50px;
+            font-size: 20px;
+            animation: fall linear infinite;
+            z-index: 1;
+            pointer-events: none;
+            user-select: none;
+        }
 
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(360deg);
-    }
-}
-		
-	.love-meter-mini {
-        position: fixed;
-        top: 15px;
-        right: 15px;
-        z-index: 1000;
-        background: rgba(255, 255, 255, 0.95);
-        padding: 12px 15px;
-        border-radius: 18px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-        width: 140px;
-        text-align: center;
-        backdrop-filter: blur(6px);
-        border: 1px solid rgba(255, 182, 193, 0.4);
-        transform-origin: top right;
-        transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-    }
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
 
-    .love-meter-mini:hover {
-        transform: scale(1.03);
-        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
-    }
+        .love-meter-mini {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px 15px;
+            border-radius: 18px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+            width: 140px;
+            text-align: center;
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 182, 193, 0.4);
+            transform-origin: top right;
+            transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        }
 
-    .mini-love-btn {
-        background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
-        color: white;
-        border: none;
-        padding: 6px 10px;
-        font-size: 11px;
-        border-radius: 16px;
-        cursor: pointer;
-        transition: all 0.3s;
-        box-shadow: 0 3px 8px rgba(255, 107, 107, 0.3);
-        margin-bottom: 8px;
-        width: 100%;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-    }
+        .love-meter-mini:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        }
 
-    .mini-love-btn:hover {
-        transform: translateY(-1px);
-    }
+        .mini-love-btn {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            font-size: 11px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 3px 8px rgba(255, 107, 107, 0.3);
+            margin-bottom: 8px;
+            width: 100%;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
 
-    .mini-scanner {
-        height: 4px;
-        background: linear-gradient(90deg, #f5f5f5 0%, #ffb6c1 50%, #f5f5f5 100%);
-        border-radius: 4px;
-        margin: 8px 0;
-        position: relative;
-        overflow: hidden;
-    }
+        .mini-love-btn:hover {
+            transform: translateY(-1px);
+        }
 
-    .mini-scanner::after {
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 40%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
-        animation: scanning 1.2s infinite linear;
-    }
+        .mini-scanner {
+            height: 4px;
+            background: linear-gradient(90deg, #f5f5f5 0%, #ffb6c1 50%, #f5f5f5 100%);
+            border-radius: 4px;
+            margin: 8px 0;
+            position: relative;
+            overflow: hidden;
+        }
 
-    .mini-result {
-        font-size: 22px;
-        font-weight: 800;
-        color: #ff6b6b;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: 'Segoe UI', system-ui, sans-serif;
-        transition: all 0.4s;
-    }
+        .mini-scanner::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 40%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
+            animation: scanning 1.2s infinite linear;
+        }
 
-    .mini-hearts {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        top: 0;
-        left: 0;
-        z-index: -1;
-    }
+        .mini-result {
+            font-size: 22px;
+            font-weight: 800;
+            color: #ff6b6b;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            transition: all 0.4s;
+        }
 
-    .mini-heart {
-        position: absolute;
-        font-size: 12px;
-        opacity: 0;
-        animation: float-up 1.8s ease-in forwards;
-    }
+        .mini-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
 
-    .infinity-display {
-        font-size: 28px;
-        font-weight: 900;
-        color: #ff6b6b;
-        line-height: 1;
-        animation: pulse 1.2s infinite alternate;
-    }
+        .mini-heart {
+            position: absolute;
+            font-size: 12px;
+            opacity: 0;
+            animation: float-up 1.8s ease-in forwards;
+        }
 
-    @keyframes scanning {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(250%); }
-    }
+        .infinity-display {
+            font-size: 28px;
+            font-weight: 900;
+            color: #ff6b6b;
+            line-height: 1;
+            animation: pulse 1.2s infinite alternate;
+        }
 
-    @keyframes float-up {
-        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-        100% { transform: translateY(-60px) rotate(15deg); opacity: 0; }
-    }
+        @keyframes scanning {
+            0% {
+                transform: translateX(-100%);
+            }
 
-    @keyframes pulse {
-        0% { transform: scale(1); opacity: 0.9; }
-        100% { transform: scale(1.15); opacity: 1; }
-    }
+            100% {
+                transform: translateX(250%);
+            }
+        }
 
-    @keyframes rapidCount {
-        0% { opacity: 0.5; }
-        50% { opacity: 1; }
-        100% { opacity: 0.5; }
-    }
-	
+        @keyframes float-up {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-60px) rotate(15deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.9;
+            }
+
+            100% {
+                transform: scale(1.15);
+                opacity: 1;
+            }
+        }
+
+        @keyframes rapidCount {
+            0% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.5;
+            }
+        }
+
         :root {
             --primary-dark: #8B0000;
             --primary-main: #C62828;
@@ -218,28 +245,55 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(255,235,238,0.9) 0%, rgba(248,187,208,0.95) 100%);
+            background: linear-gradient(135deg, rgba(255, 235, 238, 0.9) 0%, rgba(248, 187, 208, 0.95) 100%);
             z-index: -1;
         }
 
         @keyframes floatParticle {
-            0% { transform: translateY(100vh) translateX(0); }
-            100% { transform: translateY(-100px) translateX(20px); }
+            0% {
+                transform: translateY(100vh) translateX(0);
+            }
+
+            100% {
+                transform: translateY(-100px) translateX(20px);
+            }
         }
 
         @keyframes floatHeart {
-            0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0; }
-            20% { opacity: 0.7; }
-            100% { transform: translateY(-100px) translateX(100px) rotate(360deg); opacity: 0; }
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translateY(-100px) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
         }
 
         @keyframes sparkle {
-            0% { transform: scale(0.5); opacity: 0; }
-            50% { opacity: 0.8; }
-            100% { transform: scale(1.5); opacity: 0; }
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             font-weight: 600;
             color: var(--primary-dark);
         }
@@ -472,54 +526,90 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .fade-in {
             animation: fadeIn 0.6s ease-out forwards;
         }
 
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
-        .delay-4 { animation-delay: 0.8s; }
-        .delay-5 { animation-delay: 1.0s; }
-        .delay-6 { animation-delay: 1.2s; }
-        .delay-7 { animation-delay: 1.4s; }
-        .delay-8 { animation-delay: 1.6s; }
-        .delay-9 { animation-delay: 1.8s; }
-        .delay-10 { animation-delay: 2.0s; }
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        .delay-4 {
+            animation-delay: 0.8s;
+        }
+
+        .delay-5 {
+            animation-delay: 1.0s;
+        }
+
+        .delay-6 {
+            animation-delay: 1.2s;
+        }
+
+        .delay-7 {
+            animation-delay: 1.4s;
+        }
+
+        .delay-8 {
+            animation-delay: 1.6s;
+        }
+
+        .delay-9 {
+            animation-delay: 1.8s;
+        }
+
+        .delay-10 {
+            animation-delay: 2.0s;
+        }
 
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
                 max-width: 100%;
             }
-            
+
             h1 {
                 font-size: 2rem;
             }
-            
+
             .song-header {
                 padding: 1rem;
             }
-            
+
             .song-thumbnail-container {
                 width: 100%;
                 padding-bottom: 56.25%;
                 border-radius: 6px;
             }
-            
+
             .song-content {
                 padding: 0 1rem 1rem;
             }
-            
+
             .btn-group {
                 flex-direction: row;
                 justify-content: center;
             }
-            
+
             .btn {
                 padding: 0.5rem 1rem;
             }
@@ -529,11 +619,11 @@
             h1 {
                 font-size: 1.8rem;
             }
-            
+
             .subtitle {
                 font-size: 1rem;
             }
-            
+
             .song-thumbnail-container {
                 padding-bottom: 75%;
             }
@@ -541,1153 +631,1615 @@
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
 
-<div class="love-meter-mini">
-    <button class="mini-love-btn" id="miniMeasureLove">My ❤️ for you?</button>
-    <div class="mini-scanner"></div>
-    <div class="mini-result" id="miniResult"><h6>13% or 15% ?</h6></div>
-    <div class="mini-hearts" id="miniHearts"></div>
-</div>
+    <div class="love-meter-mini">
+        <button class="mini-love-btn" id="miniMeasureLove">My ❤️ for you?</button>
+        <div class="mini-scanner"></div>
+        <div class="mini-result" id="miniResult">
+            <h6>13% or 15% ?</h6>
+        </div>
+        <div class="mini-hearts" id="miniHearts"></div>
+    </div>
     <div class="bg-container" id="bgContainer"></div>
     <div class="bg-overlay"></div>
 
     <div class="container">
         <header class="fade-in">
             <h1><b>My heart in a<br>PLAYLIST</b></h1>
-            <p class="subtitle"><h2>33 songs</h2><h4>that remind me of you...</h4></p>
+            <p class="subtitle">
+            <h2>33 songs</h2>
+            <h4>that remind me of you...</h4>
+            </p>
         </header>
 
         <main>
-        <!-- Song 1 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>1. Amar Shotto<h6><i>(You are my truth...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio1">
-                <div class="progress-container" onclick="seekAudio(event, 'audio1')">
-                    <div class="progress-bar" id="progressBar1"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay1">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio1')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio1')">
-                            <i class="fas fa-play" id="playPauseIcon1"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio1')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 1 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>1. Amar Shotto<h6><i>(You are my truth...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio1">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio1')">
+                                <div class="progress-bar" id="progressBar1"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay1">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio1')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio1')">
+                                        <i class="fas fa-play" id="playPauseIcon1"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio1')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio1" ontimeupdate="updateProgress('audio1')"
+                            onloadedmetadata="initAudio('audio1')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Amar%20Shotto.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio1" ontimeupdate="updateProgress('audio1')" onloadedmetadata="initAudio('audio1')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Amar%20Shotto.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 2 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>2. I Wanna Be Yours<h6><i>(That's why I want to be with you...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio2">
-                <div class="progress-container" onclick="seekAudio(event, 'audio2')">
-                    <div class="progress-bar" id="progressBar2"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay2">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio2')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio2')">
-                            <i class="fas fa-play" id="playPauseIcon2"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio2')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 2 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>2. I Wanna Be Yours<h6><i>(That's why I want to be with you...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio2">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio2')">
+                                <div class="progress-bar" id="progressBar2"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay2">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio2')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio2')">
+                                        <i class="fas fa-play" id="playPauseIcon2"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio2')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio2" ontimeupdate="updateProgress('audio2')"
+                            onloadedmetadata="initAudio('audio2')">
+                            <source
+                                src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/I%20Wanna%20Be%20Yours.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio2" ontimeupdate="updateProgress('audio2')" onloadedmetadata="initAudio('audio2')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/I%20Wanna%20Be%20Yours.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 3 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>3. Jodi Abar<h6><i>(If only we could be together...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio3">
-                <div class="progress-container" onclick="seekAudio(event, 'audio3')">
-                    <div class="progress-bar" id="progressBar3"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay3">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio3')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio3')">
-                            <i class="fas fa-play" id="playPauseIcon3"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio3')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 3 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>3. Jodi Abar<h6><i>(If only we could be together...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio3">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio3')">
+                                <div class="progress-bar" id="progressBar3"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay3">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio3')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio3')">
+                                        <i class="fas fa-play" id="playPauseIcon3"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio3')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio3" ontimeupdate="updateProgress('audio3')"
+                            onloadedmetadata="initAudio('audio3')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Jodi%20Abar.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio3" ontimeupdate="updateProgress('audio3')" onloadedmetadata="initAudio('audio3')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Jodi%20Abar.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 4 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>4. Jodi Konodin<h6><i>(If someday...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio4">
-                <div class="progress-container" onclick="seekAudio(event, 'audio4')">
-                    <div class="progress-bar" id="progressBar4"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay4">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio4')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio4')">
-                            <i class="fas fa-play" id="playPauseIcon4"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio4')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 4 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>4. Jodi Konodin<h6><i>(If someday...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio4">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio4')">
+                                <div class="progress-bar" id="progressBar4"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay4">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio4')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio4')">
+                                        <i class="fas fa-play" id="playPauseIcon4"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio4')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio4" ontimeupdate="updateProgress('audio4')"
+                            onloadedmetadata="initAudio('audio4')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Jodi%20Konodin.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio4" ontimeupdate="updateProgress('audio4')" onloadedmetadata="initAudio('audio4')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Jodi%20Konodin.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 5 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>5. Tumi Amar Onek Shokher<h6><i>(You are my most beloved dream...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio5">
-                <div class="progress-container" onclick="seekAudio(event, 'audio5')">
-                    <div class="progress-bar" id="progressBar5"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay5">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio5')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio5')">
-                            <i class="fas fa-play" id="playPauseIcon5"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio5')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 5 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>5. Tumi Amar Onek Shokher<h6><i>(You are my most beloved dream...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio5">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio5')">
+                                <div class="progress-bar" id="progressBar5"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay5">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio5')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio5')">
+                                        <i class="fas fa-play" id="playPauseIcon5"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio5')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio5" ontimeupdate="updateProgress('audio5')"
+                            onloadedmetadata="initAudio('audio5')">
+                            <source
+                                src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Tumi%20Amar%20Onek%20Shokher.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio5" ontimeupdate="updateProgress('audio5')" onloadedmetadata="initAudio('audio5')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Tumi%20Amar%20Onek%20Shokher.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 6 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>6. Jo Tum Mere Ho<h6><i>(Only if you were mine...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio6">
-                <div class="progress-container" onclick="seekAudio(event, 'audio6')">
-                    <div class="progress-bar" id="progressBar6"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay6">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio6')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio6')">
-                            <i class="fas fa-play" id="playPauseIcon6"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio6')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 6 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>6. Jo Tum Mere Ho<h6><i>(Only if you were mine...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio6">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio6')">
+                                <div class="progress-bar" id="progressBar6"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay6">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio6')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio6')">
+                                        <i class="fas fa-play" id="playPauseIcon6"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio6')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio6" ontimeupdate="updateProgress('audio6')"
+                            onloadedmetadata="initAudio('audio6')">
+                            <source
+                                src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Jo%20Tum%20Mere%20Ho.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio6" ontimeupdate="updateProgress('audio6')" onloadedmetadata="initAudio('audio6')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Jo%20Tum%20Mere%20Ho.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 7 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>7. Tera Ban Jaunga<h6><i>(Or maybe if I would become yours...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio7">
-                <div class="progress-container" onclick="seekAudio(event, 'audio7')">
-                    <div class="progress-bar" id="progressBar7"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay7">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio7')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio7')">
-                            <i class="fas fa-play" id="playPauseIcon7"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio7')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 7 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>7. Tera Ban Jaunga<h6><i>(Or maybe if I would become yours...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio7">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio7')">
+                                <div class="progress-bar" id="progressBar7"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay7">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio7')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio7')">
+                                        <i class="fas fa-play" id="playPauseIcon7"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio7')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio7" ontimeupdate="updateProgress('audio7')"
+                            onloadedmetadata="initAudio('audio7')">
+                            <source
+                                src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Tera%20Ban%20Jaunga.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio7" ontimeupdate="updateProgress('audio7')" onloadedmetadata="initAudio('audio7')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Tera%20Ban%20Jaunga.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 8 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>8. Tum Se Hi<h6><i>(Because with you, everything feels right...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio8">
-                <div class="progress-container" onclick="seekAudio(event, 'audio8')">
-                    <div class="progress-bar" id="progressBar8"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay8">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio8')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio8')">
-                            <i class="fas fa-play" id="playPauseIcon8"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio8')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 8 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>8. Tum Se Hi<h6><i>(Because with you, everything feels right...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio8">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio8')">
+                                <div class="progress-bar" id="progressBar8"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay8">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio8')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio8')">
+                                        <i class="fas fa-play" id="playPauseIcon8"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio8')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio8" ontimeupdate="updateProgress('audio8')"
+                            onloadedmetadata="initAudio('audio8')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Tum%20Se%20Hi.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio8" ontimeupdate="updateProgress('audio8')" onloadedmetadata="initAudio('audio8')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Tum%20Se%20Hi.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 9 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>9. Meherbaan<h6><i>(You are so kind and loving...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio9">
-                <div class="progress-container" onclick="seekAudio(event, 'audio9')">
-                    <div class="progress-bar" id="progressBar9"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay9">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio9')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio9')">
-                            <i class="fas fa-play" id="playPauseIcon9"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio9')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 9 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>9. Meherbaan<h6><i>(You are so kind and loving...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio9">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio9')">
+                                <div class="progress-bar" id="progressBar9"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay9">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio9')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio9')">
+                                        <i class="fas fa-play" id="playPauseIcon9"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio9')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio9" ontimeupdate="updateProgress('audio9')"
+                            onloadedmetadata="initAudio('audio9')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Meherbaan.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio9" ontimeupdate="updateProgress('audio9')" onloadedmetadata="initAudio('audio9')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Meherbaan.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 10 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>10. Ishq Hai<h6><i>(Ishq? Onneekkkk, onek beshi...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio10">
-                <div class="progress-container" onclick="seekAudio(event, 'audio10')">
-                    <div class="progress-bar" id="progressBar10"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay10">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio10')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio10')">
-                            <i class="fas fa-play" id="playPauseIcon10"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio10')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 10 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>10. Ishq Hai<h6><i>(Ishq? Onneekkkk, onek beshi...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio10">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio10')">
+                                <div class="progress-bar" id="progressBar10"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay10">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio10')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio10')">
+                                        <i class="fas fa-play" id="playPauseIcon10"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio10')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio10" ontimeupdate="updateProgress('audio10')"
+                            onloadedmetadata="initAudio('audio10')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Ishq%20Hai.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio10" ontimeupdate="updateProgress('audio10')" onloadedmetadata="initAudio('audio10')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Ishq%20Hai.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 11 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>11. Raanjhan<h6><i>(You are my beloved...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio11">
-                <div class="progress-container" onclick="seekAudio(event, 'audio11')">
-                    <div class="progress-bar" id="progressBar11"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay11">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio11')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio11')">
-                            <i class="fas fa-play" id="playPauseIcon11"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio11')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 11 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>11. Raanjhan<h6><i>(You are my beloved...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio11">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio11')">
+                                <div class="progress-bar" id="progressBar11"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay11">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio11')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio11')">
+                                        <i class="fas fa-play" id="playPauseIcon11"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio11')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio11" ontimeupdate="updateProgress('audio11')"
+                            onloadedmetadata="initAudio('audio11')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Raanjhan.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio11" ontimeupdate="updateProgress('audio11')" onloadedmetadata="initAudio('audio11')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Raanjhan.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 12 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>12. Mehrama<h6><i>(But this love also brings pain...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio12">
-                <div class="progress-container" onclick="seekAudio(event, 'audio12')">
-                    <div class="progress-bar" id="progressBar12"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay12">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio12')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio12')">
-                            <i class="fas fa-play" id="playPauseIcon12"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio12')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 12 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>12. Mehrama<h6><i>(But this love also brings pain...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio12">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio12')">
+                                <div class="progress-bar" id="progressBar12"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay12">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio12')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio12')">
+                                        <i class="fas fa-play" id="playPauseIcon12"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio12')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio12" ontimeupdate="updateProgress('audio12')"
+                            onloadedmetadata="initAudio('audio12')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Mehrama.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio12" ontimeupdate="updateProgress('audio12')" onloadedmetadata="initAudio('audio12')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Mehrama.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 13 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>13. Sudhu Tomake<h6><i>(Still I only want you...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio13">
-                <div class="progress-container" onclick="seekAudio(event, 'audio13')">
-                    <div class="progress-bar" id="progressBar13"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay13">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio13')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio13')">
-                            <i class="fas fa-play" id="playPauseIcon13"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio13')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 13 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>13. Sudhu Tomake<h6><i>(Still I only want you...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio13">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio13')">
+                                <div class="progress-bar" id="progressBar13"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay13">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio13')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio13')">
+                                        <i class="fas fa-play" id="playPauseIcon13"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio13')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio13" ontimeupdate="updateProgress('audio13')"
+                            onloadedmetadata="initAudio('audio13')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Sudhu%20Tomake.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio13" ontimeupdate="updateProgress('audio13')" onloadedmetadata="initAudio('audio13')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Sudhu%20Tomake.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 14 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>15. Proticchobi<h6><i>(But now, all I have is your reflection...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio14">
-                <div class="progress-container" onclick="seekAudio(event, 'audio14')">
-                    <div class="progress-bar" id="progressBar14"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay14">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio14')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio14')">
-                            <i class="fas fa-play" id="playPauseIcon14"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio14')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 14 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>15. Proticchobi<h6><i>(But now, all I have is your reflection...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio14">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio14')">
+                                <div class="progress-bar" id="progressBar14"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay14">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio14')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio14')">
+                                        <i class="fas fa-play" id="playPauseIcon14"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio14')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio14" ontimeupdate="updateProgress('audio14')"
+                            onloadedmetadata="initAudio('audio14')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Proticchobi.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio14" ontimeupdate="updateProgress('audio14')" onloadedmetadata="initAudio('audio14')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Proticchobi.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 15 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>16. Porinita<h6><i>(Ogo porinitar pane mon chutiya chole... 🙂)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio15">
-                <div class="progress-container" onclick="seekAudio(event, 'audio15')">
-                    <div class="progress-bar" id="progressBar15"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay15">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio15')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio15')">
-                            <i class="fas fa-play" id="playPauseIcon15"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio15')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 15 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>16. Porinita<h6><i>(Ogo porinitar pane mon chutiya chole... 🙂)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio15">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio15')">
+                                <div class="progress-bar" id="progressBar15"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay15">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio15')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio15')">
+                                        <i class="fas fa-play" id="playPauseIcon15"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio15')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio15" ontimeupdate="updateProgress('audio15')"
+                            onloadedmetadata="initAudio('audio15')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Porinita.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio15" ontimeupdate="updateProgress('audio15')" onloadedmetadata="initAudio('audio15')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Porinita.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 16 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>17. Lambiyaan Judaiyaan<h6><i>(1.5 years? Feels so long...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio16">
-                <div class="progress-container" onclick="seekAudio(event, 'audio16')">
-                    <div class="progress-bar" id="progressBar16"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay16">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio16')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio16')">
-                            <i class="fas fa-play" id="playPauseIcon16"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio16')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 16 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>17. Lambiyaan Judaiyaan<h6><i>(1.5 years? Feels so long...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio16">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio16')">
+                                <div class="progress-bar" id="progressBar16"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay16">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio16')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio16')">
+                                        <i class="fas fa-play" id="playPauseIcon16"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio16')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio16" ontimeupdate="updateProgress('audio16')"
+                            onloadedmetadata="initAudio('audio16')">
+                            <source
+                                src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Lambiyaan%20Judaiyaan.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio16" ontimeupdate="updateProgress('audio16')" onloadedmetadata="initAudio('audio16')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Lambiyaan%20Judaiyaan.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 17 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>18. Dancing With Your Ghost<h6><i>(If you leave, I will be left only with your memories...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio17">
-                <div class="progress-container" onclick="seekAudio(event, 'audio17')">
-                    <div class="progress-bar" id="progressBar17"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay17">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio17')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio17')">
-                            <i class="fas fa-play" id="playPauseIcon17"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio17')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 17 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>18. Dancing With Your Ghost<h6><i>(If you leave, I will be left only with your
+                                    memories...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio17">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio17')">
+                                <div class="progress-bar" id="progressBar17"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay17">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio17')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio17')">
+                                        <i class="fas fa-play" id="playPauseIcon17"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio17')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio17" ontimeupdate="updateProgress('audio17')"
+                            onloadedmetadata="initAudio('audio17')">
+                            <source
+                                src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Dancing%20With%20Your%20Ghost.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio17" ontimeupdate="updateProgress('audio17')" onloadedmetadata="initAudio('audio17')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Dancing%20With%20Your%20Ghost.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 18 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>19. Mombati<h6><i>(Still, like a candle, love will burn quietly...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio18">
-                <div class="progress-container" onclick="seekAudio(event, 'audio18')">
-                    <div class="progress-bar" id="progressBar18"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay18">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio18')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio18')">
-                            <i class="fas fa-play" id="playPauseIcon18"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio18')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 18 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>19. Mombati<h6><i>(Still, like a candle, love will burn quietly...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio18">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio18')">
+                                <div class="progress-bar" id="progressBar18"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay18">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio18')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio18')">
+                                        <i class="fas fa-play" id="playPauseIcon18"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio18')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio18" ontimeupdate="updateProgress('audio18')"
+                            onloadedmetadata="initAudio('audio18')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Mombati.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio18" ontimeupdate="updateProgress('audio18')" onloadedmetadata="initAudio('audio18')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Mombati.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 19 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>20. Purnata<h6><i>(You complete me, you always do...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio19">
-                <div class="progress-container" onclick="seekAudio(event, 'audio19')">
-                    <div class="progress-bar" id="progressBar19"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay19">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio19')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio19')">
-                            <i class="fas fa-play" id="playPauseIcon19"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio19')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 19 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>20. Purnata<h6><i>(You complete me, you always do...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio19">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio19')">
+                                <div class="progress-bar" id="progressBar19"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay19">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio19')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio19')">
+                                        <i class="fas fa-play" id="playPauseIcon19"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio19')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio19" ontimeupdate="updateProgress('audio19')"
+                            onloadedmetadata="initAudio('audio19')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Purnata.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio19" ontimeupdate="updateProgress('audio19')" onloadedmetadata="initAudio('audio19')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Purnata.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 20 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>21. CO2<h6><i>(Just remove the C and I can't live a second without you...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio20">
-                <div class="progress-container" onclick="seekAudio(event, 'audio20')">
-                    <div class="progress-bar" id="progressBar20"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay20">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio20')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio20')">
-                            <i class="fas fa-play" id="playPauseIcon20"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio20')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 20 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>21. CO2<h6><i>(Just remove the C and I can't live a second without you...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio20">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio20')">
+                                <div class="progress-bar" id="progressBar20"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay20">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio20')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio20')">
+                                        <i class="fas fa-play" id="playPauseIcon20"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio20')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio20" ontimeupdate="updateProgress('audio20')"
+                            onloadedmetadata="initAudio('audio20')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Co2.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio20" ontimeupdate="updateProgress('audio20')" onloadedmetadata="initAudio('audio20')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Co2.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 21 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>22. Maand<h6><i>(I can't imagine you fading away...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio21">
-                <div class="progress-container" onclick="seekAudio(event, 'audio21')">
-                    <div class="progress-bar" id="progressBar21"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay21">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio21')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio21')">
-                            <i class="fas fa-play" id="playPauseIcon21"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio21')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 21 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>22. Maand<h6><i>(I can't imagine you fading away...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio21">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio21')">
+                                <div class="progress-bar" id="progressBar21"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay21">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio21')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio21')">
+                                        <i class="fas fa-play" id="playPauseIcon21"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio21')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio21" ontimeupdate="updateProgress('audio21')"
+                            onloadedmetadata="initAudio('audio21')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Maand.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio21" ontimeupdate="updateProgress('audio21')" onloadedmetadata="initAudio('audio21')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Maand.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 22 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>23. Avash<h6><i>(I wanna stay with you at least like a faint of shadow...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio22">
-                <div class="progress-container" onclick="seekAudio(event, 'audio22')">
-                    <div class="progress-bar" id="progressBar22"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay22">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio22')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio22')">
-                            <i class="fas fa-play" id="playPauseIcon22"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio22')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 22 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>23. Avash<h6><i>(I wanna stay with you at least like a faint of shadow...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio22">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio22')">
+                                <div class="progress-bar" id="progressBar22"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay22">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio22')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio22')">
+                                        <i class="fas fa-play" id="playPauseIcon22"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio22')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio22" ontimeupdate="updateProgress('audio22')"
+                            onloadedmetadata="initAudio('audio22')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Avash.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio22" ontimeupdate="updateProgress('audio22')" onloadedmetadata="initAudio('audio22')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Avash.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 23 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>24. Kodom<h6><i>(So that love always finds a way to bloom like kodom again...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio23">
-                <div class="progress-container" onclick="seekAudio(event, 'audio23')">
-                    <div class="progress-bar" id="progressBar23"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay23">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio23')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio23')">
-                            <i class="fas fa-play" id="playPauseIcon23"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio23')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 23 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>24. Kodom<h6><i>(So that love always finds a way to bloom like kodom again...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio23">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio23')">
+                                <div class="progress-bar" id="progressBar23"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay23">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio23')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio23')">
+                                        <i class="fas fa-play" id="playPauseIcon23"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio23')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio23" ontimeupdate="updateProgress('audio23')"
+                            onloadedmetadata="initAudio('audio23')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Kodom.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio23" ontimeupdate="updateProgress('audio23')" onloadedmetadata="initAudio('audio23')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Kodom.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 24 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>25. Janib<h6><i>(ooooooooo Roshni pakhi...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio24">
-                <div class="progress-container" onclick="seekAudio(event, 'audio24')">
-                    <div class="progress-bar" id="progressBar24"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay24">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio24')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio24')">
-                            <i class="fas fa-play" id="playPauseIcon24"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio24')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 24 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>25. Janib<h6><i>(ooooooooo Roshni pakhi...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio24">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio24')">
+                                <div class="progress-bar" id="progressBar24"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay24">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio24')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio24')">
+                                        <i class="fas fa-play" id="playPauseIcon24"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio24')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio24" ontimeupdate="updateProgress('audio24')"
+                            onloadedmetadata="initAudio('audio24')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Janib.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio24" ontimeupdate="updateProgress('audio24')" onloadedmetadata="initAudio('audio24')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Janib.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 25 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>26. Dur Shopno<h6><i>(Even if you are a distant dream...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio25">
-                <div class="progress-container" onclick="seekAudio(event, 'audio25')">
-                    <div class="progress-bar" id="progressBar25"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay25">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio25')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio25')">
-                            <i class="fas fa-play" id="playPauseIcon25"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio25')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 25 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>26. Dur Shopno<h6><i>(Even if you are a distant dream...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio25">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio25')">
+                                <div class="progress-bar" id="progressBar25"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay25">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio25')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio25')">
+                                        <i class="fas fa-play" id="playPauseIcon25"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio25')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio25" ontimeupdate="updateProgress('audio25')"
+                            onloadedmetadata="initAudio('audio25')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Dur%20Shopno.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio25" ontimeupdate="updateProgress('audio25')" onloadedmetadata="initAudio('audio25')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Dur%20Shopno.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 26 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>27. Ichchey Manush<h6><i>(Deep inside, I still wish for you...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio26">
-                <div class="progress-container" onclick="seekAudio(event, 'audio26')">
-                    <div class="progress-bar" id="progressBar26"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay26">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio26')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio26')">
-                            <i class="fas fa-play" id="playPauseIcon26"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio26')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 26 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>27. Ichchey Manush<h6><i>(Deep inside, I still wish for you...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio26">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio26')">
+                                <div class="progress-bar" id="progressBar26"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay26">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio26')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio26')">
+                                        <i class="fas fa-play" id="playPauseIcon26"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio26')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio26" ontimeupdate="updateProgress('audio26')"
+                            onloadedmetadata="initAudio('audio26')">
+                            <source
+                                src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Ichchey%20Manush.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio26" ontimeupdate="updateProgress('audio26')" onloadedmetadata="initAudio('audio26')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Ichchey%20Manush.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 27 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>28. Heat Waves<h6><i>(Memories of you hit me like a heat wave...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio27">
-                <div class="progress-container" onclick="seekAudio(event, 'audio27')">
-                    <div class="progress-bar" id="progressBar27"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay27">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio27')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio27')">
-                            <i class="fas fa-play" id="playPauseIcon27"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio27')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 27 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>28. Heat Waves<h6><i>(Memories of you hit me like a heat wave...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio27">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio27')">
+                                <div class="progress-bar" id="progressBar27"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay27">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio27')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio27')">
+                                        <i class="fas fa-play" id="playPauseIcon27"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio27')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio27" ontimeupdate="updateProgress('audio27')"
+                            onloadedmetadata="initAudio('audio27')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Heat%20Waves.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio27" ontimeupdate="updateProgress('audio27')" onloadedmetadata="initAudio('audio27')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Heat%20Waves.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 28 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>29. Suhashini<h6><i>(Your smile is enough to make my day...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio28">
-                <div class="progress-container" onclick="seekAudio(event, 'audio28')">
-                    <div class="progress-bar" id="progressBar28"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay28">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio28')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio28')">
-                            <i class="fas fa-play" id="playPauseIcon28"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio28')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 28 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>29. Suhashini<h6><i>(Your smile is enough to make my day...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio28">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio28')">
+                                <div class="progress-bar" id="progressBar28"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay28">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio28')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio28')">
+                                        <i class="fas fa-play" id="playPauseIcon28"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio28')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio28" ontimeupdate="updateProgress('audio28')"
+                            onloadedmetadata="initAudio('audio28')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Suhashini.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio28" ontimeupdate="updateProgress('audio28')" onloadedmetadata="initAudio('audio28')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Suhashini.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 29 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>30. Gazab Ka Hai Din<h6><i>(My day turns out to be best when you stay by my side...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio29">
-                <div class="progress-container" onclick="seekAudio(event, 'audio29')">
-                    <div class="progress-bar" id="progressBar29"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay29">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio29')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio29')">
-                            <i class="fas fa-play" id="playPauseIcon29"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio29')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 29 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>30. Gazab Ka Hai Din<h6><i>(My day turns out to be best when you stay by my side...)</i>
+                            </h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio29">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio29')">
+                                <div class="progress-bar" id="progressBar29"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay29">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio29')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio29')">
+                                        <i class="fas fa-play" id="playPauseIcon29"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio29')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio29" ontimeupdate="updateProgress('audio29')"
+                            onloadedmetadata="initAudio('audio29')">
+                            <source
+                                src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Gazab%20Ka%20Hai%20Din.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio29" ontimeupdate="updateProgress('audio29')" onloadedmetadata="initAudio('audio29')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Gazab%20Ka%20Hai%20Din.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 30 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>31. Treat You Better<h6><i>(What if I can love you better than anyone ever will...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio30">
-                <div class="progress-container" onclick="seekAudio(event, 'audio30')">
-                    <div class="progress-bar" id="progressBar30"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay30">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio30')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio30')">
-                            <i class="fas fa-play" id="playPauseIcon30"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio30')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 30 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>31. Treat You Better<h6><i>(What if I can love you better than anyone ever will...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio30">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio30')">
+                                <div class="progress-bar" id="progressBar30"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay30">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio30')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio30')">
+                                        <i class="fas fa-play" id="playPauseIcon30"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio30')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio30" ontimeupdate="updateProgress('audio30')"
+                            onloadedmetadata="initAudio('audio30')">
+                            <source
+                                src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Treat%20You%20Better.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio30" ontimeupdate="updateProgress('audio30')" onloadedmetadata="initAudio('audio30')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Treat%20You%20Better.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 31 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>32. Tum Hi Ho<h6><i>(Because in the end, it was always you...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio31">
-                <div class="progress-container" onclick="seekAudio(event, 'audio31')">
-                    <div class="progress-bar" id="progressBar31"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay31">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio31')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio31')">
-                            <i class="fas fa-play" id="playPauseIcon31"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio31')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 31 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>32. Tum Hi Ho<h6><i>(Because in the end, it was always you...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio31">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio31')">
+                                <div class="progress-bar" id="progressBar31"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay31">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio31')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio31')">
+                                        <i class="fas fa-play" id="playPauseIcon31"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio31')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio31" ontimeupdate="updateProgress('audio31')"
+                            onloadedmetadata="initAudio('audio31')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Tum%20Hi%20Ho.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio31" ontimeupdate="updateProgress('audio31')" onloadedmetadata="initAudio('audio31')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Tum%20Hi%20Ho.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 32 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>33. Tumse Mohabbat Hai<h6><i>(And my love for you remains...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio32">
-                <div class="progress-container" onclick="seekAudio(event, 'audio32')">
-                    <div class="progress-bar" id="progressBar32"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay32">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio32')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio32')">
-                            <i class="fas fa-play" id="playPauseIcon32"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio32')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 32 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>33. Tumse Mohabbat Hai<h6><i>(And my love for you remains...)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio32">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio32')">
+                                <div class="progress-bar" id="progressBar32"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay32">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio32')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio32')">
+                                        <i class="fas fa-play" id="playPauseIcon32"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio32')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio32" ontimeupdate="updateProgress('audio32')"
+                            onloadedmetadata="initAudio('audio32')">
+                            <source
+                                src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Tumse%20Mohabbat%20Hai.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio32" ontimeupdate="updateProgress('audio32')" onloadedmetadata="initAudio('audio32')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Tumse%20Mohabbat%20Hai.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>
 
-<!-- Song 33 -->
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>34. Until I Found You<h6><i>(I will keep searching for you.. until I find you again...)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio33">
-                <div class="progress-container" onclick="seekAudio(event, 'audio33')">
-                    <div class="progress-bar" id="progressBar33"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay33">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio33')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio33')">
-                            <i class="fas fa-play" id="playPauseIcon33"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio33')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+            <!-- Song 33 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>34. Until I Found You<h6><i>(I will keep searching for you.. until I find you again...)</i>
+                            </h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio33">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio33')">
+                                <div class="progress-bar" id="progressBar33"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay33">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio33')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio33')">
+                                        <i class="fas fa-play" id="playPauseIcon33"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio33')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio33" ontimeupdate="updateProgress('audio33')"
+                            onloadedmetadata="initAudio('audio33')">
+                            <source
+                                src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Until%20I%20Found%20You.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio33" ontimeupdate="updateProgress('audio33')" onloadedmetadata="initAudio('audio33')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Until%20I%20Found%20You.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>	
-		
 
-<div class="song-card fade-in delay-1">
-    <div class="song-header">
-        <div class="song-title-wrapper">
-            <h2>35. Chal Diye Tum Kahan<h6><i>(Pore add kormu 🙂)</i></h6></h2>
-        </div>                                 
-        <div class="audio-container">
-            <div class="custom-audio" id="customAudio34">
-                <div class="progress-container" onclick="seekAudio(event, 'audio34')">
-                    <div class="progress-bar" id="progressBar34"></div>
-                </div>
-                <div class="audio-controls">
-                    <div class="time-display" id="timeDisplay34">0:00 / 0:00</div>
-                    <div class="main-controls">
-                        <button class="control-btn" onclick="skipBackward('audio34')">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button class="control-btn" onclick="playPause('audio34')">
-                            <i class="fas fa-play" id="playPauseIcon34"></i>
-                        </button>
-                        <button class="control-btn" onclick="skipForward('audio34')">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+
+            <p align="center"><b><i>🎀</i></b></p>
+
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>35. Chal Diye Tum Kahan<h6><i>(Pore add kormu 🙂)</i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio34">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio34')">
+                                <div class="progress-bar" id="progressBar34"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay34">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio34')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio34')">
+                                        <i class="fas fa-play" id="playPauseIcon34"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio34')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio34" ontimeupdate="updateProgress('audio34')"
+                            onloadedmetadata="initAudio('audio34')">
+                            <source
+                                src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Chal%20Diye%20Tum%20Kahan.mp3"
+                                type="audio/mp3">
+                        </audio>
                     </div>
                 </div>
             </div>
-            <audio id="audio34" ontimeupdate="updateProgress('audio34')" onloadedmetadata="initAudio('audio34')">
-                <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Chal%20Diye%20Tum%20Kahan.mp3" type="audio/mp3">
-            </audio>
-        </div>           
-    </div>
-</div>			
-		
-		
+
+
+            <!-- Song 35 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>36. Tu Hi Hai Aashiqui<h6><i></i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio35">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio35')">
+                                <div class="progress-bar" id="progressBar35"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay35">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio35')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio35')">
+                                        <i class="fas fa-play" id="playPauseIcon35"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio35')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio35" ontimeupdate="updateProgress('audio35')"
+                            onloadedmetadata="initAudio('audio35')">
+                            <source
+                                src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Tu%20Hi%20Hai%20Aashiqui.mp3"
+                                type="audio/mp3">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Song 36 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>37. Tu Hi Haqeeqat<h6><i></i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio36">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio36')">
+                                <div class="progress-bar" id="progressBar36"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay36">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio36')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio36')">
+                                        <i class="fas fa-play" id="playPauseIcon36"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio36')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio36" ontimeupdate="updateProgress('audio36')"
+                            onloadedmetadata="initAudio('audio36')">
+                            <source
+                                src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Tu%20Hi%20Haqeeqat.mp3"
+                                type="audio/mp3">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Song 37 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>38. Afsos<h6><i></i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio37">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio37')">
+                                <div class="progress-bar" id="progressBar37"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay37">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio37')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio37')">
+                                        <i class="fas fa-play" id="playPauseIcon37"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio37')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio37" ontimeupdate="updateProgress('audio37')"
+                            onloadedmetadata="initAudio('audio37')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Afsos.mp3"
+                                type="audio/mp3">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Song 38 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>39. Die With A Smile<h6><i></i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio38">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio38')">
+                                <div class="progress-bar" id="progressBar38"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay38">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio38')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio38')">
+                                        <i class="fas fa-play" id="playPauseIcon38"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio38')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio38" ontimeupdate="updateProgress('audio38')"
+                            onloadedmetadata="initAudio('audio38')">
+                            <source
+                                src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Die%20With%20A%20Smile.mp3"
+                                type="audio/mp3">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Song 39 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>40. Dil Ibaadat Kar Raha Hai<h6><i></i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio39">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio39')">
+                                <div class="progress-bar" id="progressBar39"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay39">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio39')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio39')">
+                                        <i class="fas fa-play" id="playPauseIcon39"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio39')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio39" ontimeupdate="updateProgress('audio39')"
+                            onloadedmetadata="initAudio('audio39')">
+                            <source
+                                src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Dil%20Ibaadat%20Kar%20Raha%20Hai.mp3"
+                                type="audio/mp3">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Song 40 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>41. Haan Tu Hain<h6><i></i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio40">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio40')">
+                                <div class="progress-bar" id="progressBar40"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay40">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio40')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio40')">
+                                        <i class="fas fa-play" id="playPauseIcon40"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio40')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio40" ontimeupdate="updateProgress('audio40')"
+                            onloadedmetadata="initAudio('audio40')">
+                            <source
+                                src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Haan%20Tu%20Hain.mp3"
+                                type="audio/mp3">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Song 41 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>42. Hum Jee Lenge<h6><i></i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio41">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio41')">
+                                <div class="progress-bar" id="progressBar41"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay41">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio41')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio41')">
+                                        <i class="fas fa-play" id="playPauseIcon41"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio41')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio41" ontimeupdate="updateProgress('audio41')"
+                            onloadedmetadata="initAudio('audio41')">
+                            <source
+                                src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Hum%20Jee%20Lenge.mp3"
+                                type="audio/mp3">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Song 42 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>43. Maahi Ra<h6><i></i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio42">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio42')">
+                                <div class="progress-bar" id="progressBar42"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay42">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio42')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio42')">
+                                        <i class="fas fa-play" id="playPauseIcon42"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio42')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio42" ontimeupdate="updateProgress('audio42')"
+                            onloadedmetadata="initAudio('audio42')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Maahi%20Ra.mp3"
+                                type="audio/mp3">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Song 43 -->
+            <div class="song-card fade-in delay-1">
+                <div class="song-header">
+                    <div class="song-title-wrapper">
+                        <h2>44. Teri Ore<h6><i></i></h6>
+                        </h2>
+                    </div>
+                    <div class="audio-container">
+                        <div class="custom-audio" id="customAudio43">
+                            <div class="progress-container" onclick="seekAudio(event, 'audio43')">
+                                <div class="progress-bar" id="progressBar43"></div>
+                            </div>
+                            <div class="audio-controls">
+                                <div class="time-display" id="timeDisplay43">0:00 / 0:00</div>
+                                <div class="main-controls">
+                                    <button class="control-btn" onclick="skipBackward('audio43')">
+                                        <i class="fas fa-step-backward"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="playPause('audio43')">
+                                        <i class="fas fa-play" id="playPauseIcon43"></i>
+                                    </button>
+                                    <button class="control-btn" onclick="skipForward('audio43')">
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio43" ontimeupdate="updateProgress('audio43')"
+                            onloadedmetadata="initAudio('audio43')">
+                            <source src="https://github.com/fardinnuman/toroshni/raw/refs/heads/main/Teri%20Ore.mp3"
+                                type="audio/mp3">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+
+
         </main>
-		
-				        <footer class="fade-in">
-            <b><p>For someone I will always adore,<br>For someone who has the prettiest eyes,<br>For someone who brightens my days,<h3>For the most beautiful soul I know... ❤</h3></b><br><br>Looking for anything else?<br><a href="https://fardinnuman.github.io/forroshni/"><b>Click me</b></a><br>☝>.<☝</p>
+
+        <footer class="fade-in">
+            <b>
+                <p>For someone I will always adore,<br>For someone who has the prettiest eyes,<br>For someone who
+                    brightens my days,
+                <h3>For the most beautiful soul I know... ❤</h3>
+            </b><br><br>Looking for anything else?<br><a href="https://fardinnuman.github.io/forroshni/"><b>Click
+                    me</b></a><br>☝>.<☝< /p>
         </footer>
-		
+
     </div>
 
     <script>
@@ -1703,7 +2255,7 @@
             const num = id.replace('audio', '');
             const icon = document.getElementById(`playPauseIcon${num}`);
             const btnIcon = document.getElementById(`playBtn${num}`);
-            
+
             document.querySelectorAll('audio').forEach(otherAudio => {
                 if (otherAudio.id !== id && !otherAudio.paused) {
                     otherAudio.pause();
@@ -1731,11 +2283,11 @@
             const num = id.replace('audio', '');
             const progressBar = document.getElementById(`progressBar${num}`);
             const timeDisplay = document.getElementById(`timeDisplay${num}`);
-            
+
             const currentTime = formatTime(audio.currentTime);
             const duration = formatTime(audio.duration);
             timeDisplay.textContent = `${currentTime} / ${duration}`;
-            
+
             const progress = (audio.currentTime / audio.duration) * 100;
             progressBar.style.width = `${progress}%`;
         }
@@ -1777,27 +2329,27 @@
         function createBackground() {
             const container = document.getElementById('bgContainer');
             const heartEmojis = ['❤️', '💖', '💘', '💗', '💓', '💞', '💕'];
-            
+
             for (let i = 0; i < Math.floor(window.innerWidth / 15); i++) {
                 const particle = document.createElement('div');
                 particle.classList.add('bg-particle');
-                
+
                 const size = Math.random() * 100 + 50;
                 const posX = Math.random() * 100;
                 const posY = Math.random() * 100 + 100;
                 const duration = Math.random() * 30 + 20;
                 const delay = Math.random() * -30;
-                
+
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
                 particle.style.left = `${posX}%`;
                 particle.style.top = `${posY}%`;
                 particle.style.animationDuration = `${duration}s`;
                 particle.style.animationDelay = `${delay}s`;
-                
+
                 const hue = Math.random() * 20 + 340;
                 particle.style.background = `radial-gradient(circle, hsla(${hue}, 80%, 70%, 0.2) 0%, transparent 70%`;
-                
+
                 container.appendChild(particle);
             }
 
@@ -1805,41 +2357,41 @@
                 const heart = document.createElement('div');
                 heart.classList.add('bg-heart');
                 heart.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
-                
+
                 const posX = Math.random() * 100;
                 const duration = Math.random() * 20 + 15;
                 const delay = Math.random() * -20;
                 const size = Math.random() * 0.5 + 0.5;
-                
+
                 heart.style.left = `${posX}%`;
                 heart.style.animationDuration = `${duration}s`;
                 heart.style.animationDelay = `${delay}s`;
                 heart.style.fontSize = `${size}em`;
                 heart.style.opacity = Math.random() * 0.5 + 0.3;
-                
+
                 container.appendChild(heart);
             }
 
             for (let i = 0; i < 30; i++) {
                 const sparkle = document.createElement('div');
                 sparkle.classList.add('bg-sparkle');
-                
+
                 const posX = Math.random() * 100;
                 const posY = Math.random() * 100;
                 const delay = Math.random() * 5;
                 const duration = Math.random() * 3 + 2;
-                
+
                 sparkle.style.left = `${posX}%`;
                 sparkle.style.top = `${posY}%`;
                 sparkle.style.animationDelay = `${delay}s`;
                 sparkle.style.animationDuration = `${duration}s`;
                 sparkle.style.opacity = Math.random() * 0.5;
-                
+
                 container.appendChild(sparkle);
             }
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             createBackground();
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -1856,120 +2408,121 @@
                 observer.observe(card);
             });
         });
-        window.addEventListener('resize', function() {
+        window.addEventListener('resize', function () {
             const container = document.getElementById('bgContainer');
             container.innerHTML = '';
             createBackground();
         });
-    const miniLoveBtn = document.getElementById('miniMeasureLove');
-    const miniResult = document.getElementById('miniResult');
-    const miniHearts = document.getElementById('miniHearts');
+        const miniLoveBtn = document.getElementById('miniMeasureLove');
+        const miniResult = document.getElementById('miniResult');
+        const miniHearts = document.getElementById('miniHearts');
 
-    miniLoveBtn.addEventListener('click', function() {
-        document.querySelectorAll('audio').forEach(audio => {
-            if (!audio.paused) {
-                audio.pause();
-                const num = audio.id.replace('audio', '');
-                const icon = document.getElementById(`playPauseIcon${num}`);
-                if (icon) icon.className = 'fas fa-play';
-            }
+        miniLoveBtn.addEventListener('click', function () {
+            document.querySelectorAll('audio').forEach(audio => {
+                if (!audio.paused) {
+                    audio.pause();
+                    const num = audio.id.replace('audio', '');
+                    const icon = document.getElementById(`playPauseIcon${num}`);
+                    if (icon) icon.className = 'fas fa-play';
+                }
+            });
+
+            miniLoveBtn.disabled = true;
+            miniResult.textContent = '0';
+            miniHearts.innerHTML = '';
+            miniResult.style.animation = 'rapidCount 0.1s infinite';
+
+            let counter = 0;
+            const startTime = Date.now();
+            const duration = 8000;
+
+            const updateCounter = () => {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+
+                counter = Math.floor(999 * Math.pow(progress, 0.7));
+                counter += Math.floor(Math.random() * 5) - 2;
+                counter = Math.max(0, Math.min(999, counter));
+
+                miniResult.textContent = counter;
+
+                if (counter % 100 === 0 || (counter > 900 && counter % 10 === 0)) {
+                    createMiniHeart();
+                }
+
+                if (progress >= 1) {
+                    miniResult.textContent = '';
+                    miniResult.style.animation = '';
+                    showInfinity();
+                    miniLoveBtn.disabled = false;
+                } else {
+                    requestAnimationFrame(updateCounter);
+                }
+            };
+
+            requestAnimationFrame(updateCounter);
         });
 
-        miniLoveBtn.disabled = true;
-        miniResult.textContent = '0';
-        miniHearts.innerHTML = '';
-        miniResult.style.animation = 'rapidCount 0.1s infinite';
-        
-        let counter = 0;
-        const startTime = Date.now();
-        const duration = 8000;
-        
-        const updateCounter = () => {
-            const elapsed = Date.now() - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            
-            counter = Math.floor(999 * Math.pow(progress, 0.7));
-            counter += Math.floor(Math.random() * 5) - 2;
-            counter = Math.max(0, Math.min(999, counter));
-            
-            miniResult.textContent = counter;
-            
-            if (counter % 100 === 0 || (counter > 900 && counter % 10 === 0)) {
-                createMiniHeart();
+        function createMiniHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'mini-heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 1 + 1.2) + 's';
+            heart.style.color = `hsl(${Math.random() * 20 + 340}, 90%, 65%)`;
+            miniHearts.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 1800);
+        }
+        function showInfinity() {
+            miniResult.innerHTML = '<div class="infinity-display"><b>∞</b></div>';
+
+            for (let i = 0; i < 12; i++) {
+                setTimeout(() => {
+                    createMiniHeart();
+                    if (i % 3 === 0) createMiniHeart();
+                }, i * 150);
             }
-            
-            if (progress >= 1) {
-                miniResult.textContent = '';
-                miniResult.style.animation = '';
-                showInfinity();
-                miniLoveBtn.disabled = false;
-            } else {
-                requestAnimationFrame(updateCounter);
+
+            romanticVibrate();
+        }
+
+        function createHeart() {
+            const hearts = ['🎀'];
+            const heart = document.createElement('div');
+            heart.className = 'heart-confetti';
+            heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 2 + 4) + 's';
+            heart.style.opacity = Math.random() * 0.2 + 0.1;
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, parseInt(heart.style.animationDuration) * 1000);
+        }
+
+        function startHearts() {
+            for (let i = 0; i < 30; i++) {
+                setTimeout(createHeart, i * 100);
             }
-        };
-        
-        requestAnimationFrame(updateCounter);
-    });
-
-    function createMiniHeart() {
-        const heart = document.createElement('div');
-        heart.className = 'mini-heart';
-        heart.innerHTML = '❤️';
-        heart.style.left = Math.random() * 100 + '%';
-        heart.style.animationDuration = (Math.random() * 1 + 1.2) + 's';
-        heart.style.color = `hsl(${Math.random() * 20 + 340}, 90%, 65%)`;
-        miniHearts.appendChild(heart);
-        
-        setTimeout(() => heart.remove(), 1800);
-    }
-  function showInfinity() {
-    miniResult.innerHTML = '<div class="infinity-display"><b>∞</b></div>';
-    
-    for (let i = 0; i < 12; i++) {
-        setTimeout(() => {
-            createMiniHeart();
-            if (i % 3 === 0) createMiniHeart();
-        }, i * 150);
-    }
-    
-    romanticVibrate();
-}
-
-function createHeart() {
-    const hearts = ['🎀'];
-    const heart = document.createElement('div');
-    heart.className = 'heart-confetti';
-    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.animationDuration = (Math.random() * 2 + 4) + 's';
-    heart.style.opacity = Math.random() * 0.2 + 0.1;
-    heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, parseInt(heart.style.animationDuration) * 1000);
-}
-
-function startHearts() {
-    for (let i = 0; i < 30; i++) {
-        setTimeout(createHeart, i * 100);
-    }
-    setInterval(createHeart, 500);
-}
-window.addEventListener('DOMContentLoaded', startHearts);
-function romanticVibrate() {
-    if ("vibrate" in navigator) {
-        const pattern = [
-            100, 30, 100, 30,
-            200,
-            300,
-            200,
-            100, 30, 100, 30, 300
-        ];
-        navigator.vibrate(pattern);
-    }
-}	
+            setInterval(createHeart, 500);
+        }
+        window.addEventListener('DOMContentLoaded', startHearts);
+        function romanticVibrate() {
+            if ("vibrate" in navigator) {
+                const pattern = [
+                    100, 30, 100, 30,
+                    200,
+                    300,
+                    200,
+                    100, 30, 100, 30, 300
+                ];
+                navigator.vibrate(pattern);
+            }
+        }	
     </script>
 </body>
+
 </html>
