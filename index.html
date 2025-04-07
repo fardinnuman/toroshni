@@ -7,6 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
 	
+	/* Glow effect for current song */
+.song-card.playing {
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
+}
+	
 	/* Autoplay Toggle Switch */
 .autoplay-toggle {
     display: flex;
@@ -2507,7 +2512,7 @@ autoplayToggle.addEventListener('change', function() {
     autoplayStatus.textContent = isAutoplayEnabled ? 'ON' : 'OFF';
 });
 
-// Detect when a song ends and play the next one
+// When a song ends, play the next one and smoothly scroll to it
 document.querySelectorAll('audio').forEach(audio => {
     audio.addEventListener('ended', function() {
         if (isAutoplayEnabled) {
@@ -2515,21 +2520,29 @@ document.querySelectorAll('audio').forEach(audio => {
             const currentNum = parseInt(currentId.replace('audio', ''));
             const nextNum = currentNum + 1;
             const nextAudio = document.getElementById(`audio${nextNum}`);
-            
+            const nextSongCard = document.getElementById(`customAudio${nextNum}`).closest('.song-card'); // Finds the song card
+
             if (nextAudio) {
+                // Play next song
                 nextAudio.play();
-                const nextIcon = document.getElementById(`playPauseIcon${nextNum}`);
-                if (nextIcon) nextIcon.className = 'fas fa-pause';
+                document.getElementById(`playPauseIcon${nextNum}`).className = 'fas fa-pause';
                 
-                // Pause all other audios
+                // Pause other songs
                 document.querySelectorAll('audio').forEach(otherAudio => {
                     if (otherAudio.id !== nextAudio.id && !otherAudio.paused) {
                         otherAudio.pause();
                         const otherNum = otherAudio.id.replace('audio', '');
-                        const otherIcon = document.getElementById(`playPauseIcon${otherNum}`);
-                        if (otherIcon) otherIcon.className = 'fas fa-play';
+                        document.getElementById(`playPauseIcon${otherNum}`).className = 'fas fa-play';
                     }
                 });
+
+                // Smooth scroll to the next song card
+                if (nextSongCard) {
+                    nextSongCard.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center' // Centers the card on screen
+                    });
+                }
             }
         }
     });
