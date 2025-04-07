@@ -1,173 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TO : ROSHNI</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        .heart-confetti {
-            position: fixed;
-            top: -50px;
-            font-size: 20px;
-            animation: fall linear infinite;
-            z-index: 1;
-            pointer-events: none;
-            user-select: none;
-        }
+	
+.heart-confetti {
+    position: fixed;
+    top: -50px;
+    font-size: 20px;
+    animation: fall linear infinite;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+}
 
-        @keyframes fall {
-            to {
-                transform: translateY(110vh) rotate(360deg);
-            }
-        }
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+		
+	.love-meter-mini {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 12px 15px;
+        border-radius: 18px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+        width: 140px;
+        text-align: center;
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(255, 182, 193, 0.4);
+        transform-origin: top right;
+        transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
 
-        .love-meter-mini {
-            position: fixed;
-            top: 15px;
-            right: 15px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 12px 15px;
-            border-radius: 18px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-            width: 140px;
-            text-align: center;
-            backdrop-filter: blur(6px);
-            border: 1px solid rgba(255, 182, 193, 0.4);
-            transform-origin: top right;
-            transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-        }
+    .love-meter-mini:hover {
+        transform: scale(1.03);
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    }
 
-        .love-meter-mini:hover {
-            transform: scale(1.03);
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
-        }
+    .mini-love-btn {
+        background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+        color: white;
+        border: none;
+        padding: 6px 10px;
+        font-size: 11px;
+        border-radius: 16px;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: 0 3px 8px rgba(255, 107, 107, 0.3);
+        margin-bottom: 8px;
+        width: 100%;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
 
-        .mini-love-btn {
-            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
-            color: white;
-            border: none;
-            padding: 6px 10px;
-            font-size: 11px;
-            border-radius: 16px;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 3px 8px rgba(255, 107, 107, 0.3);
-            margin-bottom: 8px;
-            width: 100%;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
+    .mini-love-btn:hover {
+        transform: translateY(-1px);
+    }
 
-        .mini-love-btn:hover {
-            transform: translateY(-1px);
-        }
+    .mini-scanner {
+        height: 4px;
+        background: linear-gradient(90deg, #f5f5f5 0%, #ffb6c1 50%, #f5f5f5 100%);
+        border-radius: 4px;
+        margin: 8px 0;
+        position: relative;
+        overflow: hidden;
+    }
 
-        .mini-scanner {
-            height: 4px;
-            background: linear-gradient(90deg, #f5f5f5 0%, #ffb6c1 50%, #f5f5f5 100%);
-            border-radius: 4px;
-            margin: 8px 0;
-            position: relative;
-            overflow: hidden;
-        }
+    .mini-scanner::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 40%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
+        animation: scanning 1.2s infinite linear;
+    }
 
-        .mini-scanner::after {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 40%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
-            animation: scanning 1.2s infinite linear;
-        }
+    .mini-result {
+        font-size: 22px;
+        font-weight: 800;
+        color: #ff6b6b;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        transition: all 0.4s;
+    }
 
-        .mini-result {
-            font-size: 22px;
-            font-weight: 800;
-            color: #ff6b6b;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            transition: all 0.4s;
-        }
+    .mini-hearts {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
 
-        .mini-hearts {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
+    .mini-heart {
+        position: absolute;
+        font-size: 12px;
+        opacity: 0;
+        animation: float-up 1.8s ease-in forwards;
+    }
 
-        .mini-heart {
-            position: absolute;
-            font-size: 12px;
-            opacity: 0;
-            animation: float-up 1.8s ease-in forwards;
-        }
+    .infinity-display {
+        font-size: 28px;
+        font-weight: 900;
+        color: #ff6b6b;
+        line-height: 1;
+        animation: pulse 1.2s infinite alternate;
+    }
 
-        .infinity-display {
-            font-size: 28px;
-            font-weight: 900;
-            color: #ff6b6b;
-            line-height: 1;
-            animation: pulse 1.2s infinite alternate;
-        }
+    @keyframes scanning {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(250%); }
+    }
 
-        @keyframes scanning {
-            0% {
-                transform: translateX(-100%);
-            }
+    @keyframes float-up {
+        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(-60px) rotate(15deg); opacity: 0; }
+    }
 
-            100% {
-                transform: translateX(250%);
-            }
-        }
+    @keyframes pulse {
+        0% { transform: scale(1); opacity: 0.9; }
+        100% { transform: scale(1.15); opacity: 1; }
+    }
 
-        @keyframes float-up {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(-60px) rotate(15deg);
-                opacity: 0;
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                opacity: 0.9;
-            }
-
-            100% {
-                transform: scale(1.15);
-                opacity: 1;
-            }
-        }
-
-        @keyframes rapidCount {
-            0% {
-                opacity: 0.5;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0.5;
-            }
-        }
-
+    @keyframes rapidCount {
+        0% { opacity: 0.5; }
+        50% { opacity: 1; }
+        100% { opacity: 0.5; }
+    }
+	
         :root {
             --primary-dark: #8B0000;
             --primary-main: #C62828;
@@ -245,55 +218,28 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(255, 235, 238, 0.9) 0%, rgba(248, 187, 208, 0.95) 100%);
+            background: linear-gradient(135deg, rgba(255,235,238,0.9) 0%, rgba(248,187,208,0.95) 100%);
             z-index: -1;
         }
 
         @keyframes floatParticle {
-            0% {
-                transform: translateY(100vh) translateX(0);
-            }
-
-            100% {
-                transform: translateY(-100px) translateX(20px);
-            }
+            0% { transform: translateY(100vh) translateX(0); }
+            100% { transform: translateY(-100px) translateX(20px); }
         }
 
         @keyframes floatHeart {
-            0% {
-                transform: translateY(100vh) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-
-            20% {
-                opacity: 0.7;
-            }
-
-            100% {
-                transform: translateY(-100px) translateX(100px) rotate(360deg);
-                opacity: 0;
-            }
+            0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.7; }
+            100% { transform: translateY(-100px) translateX(100px) rotate(360deg); opacity: 0; }
         }
 
         @keyframes sparkle {
-            0% {
-                transform: scale(0.5);
-                opacity: 0;
-            }
-
-            50% {
-                opacity: 0.8;
-            }
-
-            100% {
-                transform: scale(1.5);
-                opacity: 0;
-            }
+            0% { transform: scale(0.5); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: scale(1.5); opacity: 0; }
         }
 
-        h1,
-        h2,
-        h3 {
+        h1, h2, h3 {
             font-weight: 600;
             color: var(--primary-dark);
         }
@@ -526,90 +472,54 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .fade-in {
             animation: fadeIn 0.6s ease-out forwards;
         }
 
-        .delay-1 {
-            animation-delay: 0.2s;
-        }
-
-        .delay-2 {
-            animation-delay: 0.4s;
-        }
-
-        .delay-3 {
-            animation-delay: 0.6s;
-        }
-
-        .delay-4 {
-            animation-delay: 0.8s;
-        }
-
-        .delay-5 {
-            animation-delay: 1.0s;
-        }
-
-        .delay-6 {
-            animation-delay: 1.2s;
-        }
-
-        .delay-7 {
-            animation-delay: 1.4s;
-        }
-
-        .delay-8 {
-            animation-delay: 1.6s;
-        }
-
-        .delay-9 {
-            animation-delay: 1.8s;
-        }
-
-        .delay-10 {
-            animation-delay: 2.0s;
-        }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        .delay-5 { animation-delay: 1.0s; }
+        .delay-6 { animation-delay: 1.2s; }
+        .delay-7 { animation-delay: 1.4s; }
+        .delay-8 { animation-delay: 1.6s; }
+        .delay-9 { animation-delay: 1.8s; }
+        .delay-10 { animation-delay: 2.0s; }
 
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
                 max-width: 100%;
             }
-
+            
             h1 {
                 font-size: 2rem;
             }
-
+            
             .song-header {
                 padding: 1rem;
             }
-
+            
             .song-thumbnail-container {
                 width: 100%;
                 padding-bottom: 56.25%;
                 border-radius: 6px;
             }
-
+            
             .song-content {
                 padding: 0 1rem 1rem;
             }
-
+            
             .btn-group {
                 flex-direction: row;
                 justify-content: center;
             }
-
+            
             .btn {
                 padding: 0.5rem 1rem;
             }
@@ -619,42 +529,36 @@
             h1 {
                 font-size: 1.8rem;
             }
-
+            
             .subtitle {
                 font-size: 1rem;
             }
-
+            
             .song-thumbnail-container {
-                padding-bottom: 75%;
+                padding-bottom: 75%; /* Slightly taller for mobile */
             }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
 
-    <div class="love-meter-mini">
-        <button class="mini-love-btn" id="miniMeasureLove">My ❤️ for you?</button>
-        <div class="mini-scanner"></div>
-        <div class="mini-result" id="miniResult">
-            <h6>13% or 15% ?</h6>
-        </div>
-        <div class="mini-hearts" id="miniHearts"></div>
-    </div>
+<div class="love-meter-mini">
+    <button class="mini-love-btn" id="miniMeasureLove">My love for you? ❤️</button>
+    <div class="mini-scanner"></div>
+    <div class="mini-result" id="miniResult"><h6>13% or 15% ?</h6></div>
+    <div class="mini-hearts" id="miniHearts"></div>
+</div>
     <div class="bg-container" id="bgContainer"></div>
     <div class="bg-overlay"></div>
 
     <div class="container">
         <header class="fade-in">
             <h1><b>My heart in a<br>PLAYLIST</b></h1>
-            <p class="subtitle">
-            <h2>33 songs</h2>
-            <h4>that remind me of you...</h4>
-            </p>
+            <p class="subtitle"><h2>33 songs</h2><h4>that remind me of you...</h4></p>
         </header>
 
-        <main>
+         <main>
             <!-- Song 1 -->
             <div class="song-card fade-in delay-1">
                 <div class="song-header">
@@ -2230,16 +2134,11 @@
 
 
         </main>
-
-        <footer class="fade-in">
-            <b>
-                <p>For someone I will always adore,<br>For someone who has the prettiest eyes,<br>For someone who
-                    brightens my days,
-                <h3>For the most beautiful soul I know... ❤</h3>
-            </b><br><br>Looking for anything else?<br><a href="https://fardinnuman.github.io/forroshni/"><b>Click
-                    me</b></a><br>☝>.<☝< /p>
+		
+				        <footer class="fade-in">
+            <b><p>For someone I will always adore,<br>For someone who has the prettiest eyes,<br>For someone who brightens my days,<h3>For the most beautiful soul I know... ❤</h3></b><br><br>Looking for anything else?<br><a href="https://fardinnuman.github.io/forroshni/"><b>Click me</b></a><br>☝>.<☝</p>
         </footer>
-
+		
     </div>
 
     <script>
@@ -2255,7 +2154,7 @@
             const num = id.replace('audio', '');
             const icon = document.getElementById(`playPauseIcon${num}`);
             const btnIcon = document.getElementById(`playBtn${num}`);
-
+            
             document.querySelectorAll('audio').forEach(otherAudio => {
                 if (otherAudio.id !== id && !otherAudio.paused) {
                     otherAudio.pause();
@@ -2283,11 +2182,11 @@
             const num = id.replace('audio', '');
             const progressBar = document.getElementById(`progressBar${num}`);
             const timeDisplay = document.getElementById(`timeDisplay${num}`);
-
+            
             const currentTime = formatTime(audio.currentTime);
             const duration = formatTime(audio.duration);
             timeDisplay.textContent = `${currentTime} / ${duration}`;
-
+            
             const progress = (audio.currentTime / audio.duration) * 100;
             progressBar.style.width = `${progress}%`;
         }
@@ -2329,27 +2228,27 @@
         function createBackground() {
             const container = document.getElementById('bgContainer');
             const heartEmojis = ['❤️', '💖', '💘', '💗', '💓', '💞', '💕'];
-
+            
             for (let i = 0; i < Math.floor(window.innerWidth / 15); i++) {
                 const particle = document.createElement('div');
                 particle.classList.add('bg-particle');
-
+                
                 const size = Math.random() * 100 + 50;
                 const posX = Math.random() * 100;
                 const posY = Math.random() * 100 + 100;
                 const duration = Math.random() * 30 + 20;
                 const delay = Math.random() * -30;
-
+                
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
                 particle.style.left = `${posX}%`;
                 particle.style.top = `${posY}%`;
                 particle.style.animationDuration = `${duration}s`;
                 particle.style.animationDelay = `${delay}s`;
-
+                
                 const hue = Math.random() * 20 + 340;
                 particle.style.background = `radial-gradient(circle, hsla(${hue}, 80%, 70%, 0.2) 0%, transparent 70%`;
-
+                
                 container.appendChild(particle);
             }
 
@@ -2357,41 +2256,41 @@
                 const heart = document.createElement('div');
                 heart.classList.add('bg-heart');
                 heart.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
-
+                
                 const posX = Math.random() * 100;
                 const duration = Math.random() * 20 + 15;
                 const delay = Math.random() * -20;
                 const size = Math.random() * 0.5 + 0.5;
-
+                
                 heart.style.left = `${posX}%`;
                 heart.style.animationDuration = `${duration}s`;
                 heart.style.animationDelay = `${delay}s`;
                 heart.style.fontSize = `${size}em`;
                 heart.style.opacity = Math.random() * 0.5 + 0.3;
-
+                
                 container.appendChild(heart);
             }
 
             for (let i = 0; i < 30; i++) {
                 const sparkle = document.createElement('div');
                 sparkle.classList.add('bg-sparkle');
-
+                
                 const posX = Math.random() * 100;
                 const posY = Math.random() * 100;
                 const delay = Math.random() * 5;
                 const duration = Math.random() * 3 + 2;
-
+                
                 sparkle.style.left = `${posX}%`;
                 sparkle.style.top = `${posY}%`;
                 sparkle.style.animationDelay = `${delay}s`;
                 sparkle.style.animationDuration = `${duration}s`;
                 sparkle.style.opacity = Math.random() * 0.5;
-
+                
                 container.appendChild(sparkle);
             }
         }
 
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             createBackground();
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -2408,121 +2307,120 @@
                 observer.observe(card);
             });
         });
-        window.addEventListener('resize', function () {
+        window.addEventListener('resize', function() {
             const container = document.getElementById('bgContainer');
             container.innerHTML = '';
             createBackground();
         });
-        const miniLoveBtn = document.getElementById('miniMeasureLove');
-        const miniResult = document.getElementById('miniResult');
-        const miniHearts = document.getElementById('miniHearts');
+    const miniLoveBtn = document.getElementById('miniMeasureLove');
+    const miniResult = document.getElementById('miniResult');
+    const miniHearts = document.getElementById('miniHearts');
 
-        miniLoveBtn.addEventListener('click', function () {
-            document.querySelectorAll('audio').forEach(audio => {
-                if (!audio.paused) {
-                    audio.pause();
-                    const num = audio.id.replace('audio', '');
-                    const icon = document.getElementById(`playPauseIcon${num}`);
-                    if (icon) icon.className = 'fas fa-play';
-                }
-            });
-
-            miniLoveBtn.disabled = true;
-            miniResult.textContent = '0';
-            miniHearts.innerHTML = '';
-            miniResult.style.animation = 'rapidCount 0.1s infinite';
-
-            let counter = 0;
-            const startTime = Date.now();
-            const duration = 8000;
-
-            const updateCounter = () => {
-                const elapsed = Date.now() - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-
-                counter = Math.floor(999 * Math.pow(progress, 0.7));
-                counter += Math.floor(Math.random() * 5) - 2;
-                counter = Math.max(0, Math.min(999, counter));
-
-                miniResult.textContent = counter;
-
-                if (counter % 100 === 0 || (counter > 900 && counter % 10 === 0)) {
-                    createMiniHeart();
-                }
-
-                if (progress >= 1) {
-                    miniResult.textContent = '';
-                    miniResult.style.animation = '';
-                    showInfinity();
-                    miniLoveBtn.disabled = false;
-                } else {
-                    requestAnimationFrame(updateCounter);
-                }
-            };
-
-            requestAnimationFrame(updateCounter);
+    miniLoveBtn.addEventListener('click', function() {
+        document.querySelectorAll('audio').forEach(audio => {
+            if (!audio.paused) {
+                audio.pause();
+                const num = audio.id.replace('audio', '');
+                const icon = document.getElementById(`playPauseIcon${num}`);
+                if (icon) icon.className = 'fas fa-play';
+            }
         });
 
-        function createMiniHeart() {
-            const heart = document.createElement('div');
-            heart.className = 'mini-heart';
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + '%';
-            heart.style.animationDuration = (Math.random() * 1 + 1.2) + 's';
-            heart.style.color = `hsl(${Math.random() * 20 + 340}, 90%, 65%)`;
-            miniHearts.appendChild(heart);
-
-            setTimeout(() => heart.remove(), 1800);
-        }
-        function showInfinity() {
-            miniResult.innerHTML = '<div class="infinity-display"><b>∞</b></div>';
-
-            for (let i = 0; i < 12; i++) {
-                setTimeout(() => {
-                    createMiniHeart();
-                    if (i % 3 === 0) createMiniHeart();
-                }, i * 150);
+        miniLoveBtn.disabled = true;
+        miniResult.textContent = '0';
+        miniHearts.innerHTML = '';
+        miniResult.style.animation = 'rapidCount 0.1s infinite';
+        
+        let counter = 0;
+        const startTime = Date.now();
+        const duration = 8000;
+        
+        const updateCounter = () => {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            counter = Math.floor(999 * Math.pow(progress, 0.7));
+            counter += Math.floor(Math.random() * 5) - 2;
+            counter = Math.max(0, Math.min(999, counter));
+            
+            miniResult.textContent = counter;
+            
+            if (counter % 100 === 0 || (counter > 900 && counter % 10 === 0)) {
+                createMiniHeart();
             }
-
-            romanticVibrate();
-        }
-
-        function createHeart() {
-            const hearts = ['🎀'];
-            const heart = document.createElement('div');
-            heart.className = 'heart-confetti';
-            heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (Math.random() * 2 + 4) + 's';
-            heart.style.opacity = Math.random() * 0.2 + 0.1;
-            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
-            document.body.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, parseInt(heart.style.animationDuration) * 1000);
-        }
-
-        function startHearts() {
-            for (let i = 0; i < 30; i++) {
-                setTimeout(createHeart, i * 100);
+            
+            if (progress >= 1) {
+                miniResult.textContent = '';
+                miniResult.style.animation = '';
+                showInfinity();
+                miniLoveBtn.disabled = false;
+            } else {
+                requestAnimationFrame(updateCounter);
             }
-            setInterval(createHeart, 500);
-        }
-        window.addEventListener('DOMContentLoaded', startHearts);
-        function romanticVibrate() {
-            if ("vibrate" in navigator) {
-                const pattern = [
-                    100, 30, 100, 30,
-                    200,
-                    300,
-                    200,
-                    100, 30, 100, 30, 300
-                ];
-                navigator.vibrate(pattern);
-            }
-        }	
+        };
+        
+        requestAnimationFrame(updateCounter);
+    });
+
+    function createMiniHeart() {
+        const heart = document.createElement('div');
+        heart.className = 'mini-heart';
+        heart.innerHTML = '❤️';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.animationDuration = (Math.random() * 1 + 1.2) + 's';
+        heart.style.color = `hsl(${Math.random() * 20 + 340}, 90%, 65%)`;
+        miniHearts.appendChild(heart);
+        
+        setTimeout(() => heart.remove(), 1800);
+    }
+  function showInfinity() {
+    miniResult.innerHTML = '<div class="infinity-display"><b>∞</b></div>';
+    
+    for (let i = 0; i < 12; i++) {
+        setTimeout(() => {
+            createMiniHeart();
+            if (i % 3 === 0) createMiniHeart();
+        }, i * 150);
+    }
+    
+    romanticVibrate();
+}
+
+function createHeart() {
+    const hearts = ['🎀'];
+    const heart = document.createElement('div');
+    heart.className = 'heart-confetti';
+    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (Math.random() * 2 + 4) + 's';
+    heart.style.opacity = Math.random() * 0.2 + 0.1;
+    heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, parseInt(heart.style.animationDuration) * 1000);
+}
+
+function startHearts() {
+    for (let i = 0; i < 30; i++) {
+        setTimeout(createHeart, i * 100);
+    }
+    setInterval(createHeart, 500);
+}
+window.addEventListener('DOMContentLoaded', startHearts);
+function romanticVibrate() {
+    if ("vibrate" in navigator) {
+        const pattern = [
+            100, 30, 100, 30,
+            200,
+            300,
+            200,
+            100, 30, 100, 30, 300
+        ];
+        navigator.vibrate(pattern);
+    }
+}	
     </script>
 </body>
-
 </html>
